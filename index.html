@@ -3,9 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Temperature Calculation By Andry</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header class="banner">
+        <div class="progress-container"><div>
+            <div class="progress-bar" id="js-progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="back-to-home">
+            <div class="back-to-home--cell">
+                <a href="#home" class="back-to-home--cell--home"><img src="assets/logo.png" alt="temperature-calculation"></a></h1>
+            </div>
+            <div class="back-to-home--cell">
+                <nav>
+                    <ul class="back-to-home--cell--ul">
+                        <li class="link"><a href="#introduction">Introduction</a></li>
+                        <li class="link"><a href="#temperature-calculation">Temperature Calculation</a></li>
+                        <li class="link"><a href="#temperature-formula">Temperature Formula</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>   
+
+
+
+    <main>
+        <a id="home"></a>
+        <section class="home-page">
+            <img src="assets/bg.jpg" alt=""><div></div></img>
+            <h1 class="icon-color--purple">Simple Exploration to Temperature</h1>
+        </section>
+        <div class="container rounded-elbow" id="introduction">
+            <h2 class="icon-color--cream text-align-center padding-10">Introduction</h2>
+            <div class="flex">
+                <div class="flex-50">
+                    <div class="container rounded-elbow">
+                        <img src="https://images.nationalgeographic.org/image/upload/v1638892651/EducationHub/photos/thermometer-in-the-snow.jpg" class="fill-width rounded-elbow"></img>
+                    </div>
+                    <div class="container rounded-elbow">
+                        <img src="https://media.istockphoto.com/id/1009871198/id/vektor/termometer-set-fahrenheit-celsius-kelvin-divisi-suhu-skala-pendidikan-sains.jpg?s=612x612&w=0&k=20&c=DepfusPpMBrWoikwE28hJcvoDL3Q48DHDQfBXfEH2TA=" class="fill-width rounded-elbow"></img>
+                    </div>
+                </div>
+                <div class="flex-50">
+                    <p class="icon-color--cream text-align-left font-size-17 padding-10">
+                        Temperature, measure of hotness or coldness expressed in terms of any of several arbitrary scales and indicating the direction in which heat energy will spontaneously flow i.e., from a hotter body (one at a higher temperature) to a colder body (one at a lower temperature). Temperature is not the equivalent of the energy of a thermodynamic system; e.g., a burning match is at a much higher temperature than an iceberg, but the total heat energy contained in an iceberg is much greater than the energy contained in a match. Temperature, similar to pressure or density, is called an intensive property. One that is independent of the quantity of matter being considered as distinguished from extensive properties, such as mass or volume.
+                    </p>
+                    <p class="icon-color--cream text-align-left font-size-17 padding-10">
+                        Three temperature scales are in general use today. The Fahrenheit (°F) temperature scale is used in the United States and a few other English-speaking countries. The Celsius (°C) temperature scale is standard in virtually all countries that have adopted the metric system of measurement, and it is widely used in the sciences. The Kelvin (K) scale, an absolute temperature scale (obtained by shifting the Celsius scale by −273.15° so that absolute zero coincides with 0 K), is recognized as the international standard for scientific temperature measurement.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container rounded-elbow">
+            <h2 class="icon-color--cream text-align-center padding-10" id="temperature-calculation">Temperature Calculation</h2>          
+            <div class="flex">
+                <div class="flex-40">
+                    <div class="vertical-grid">
+                        <div class="grid--1">
+                            <p class="icon-color--cream text-align-right font-size-12">Boiling Point of Water (°F)</p>
+                        </div>
+                        <div class="grid--7">
+                            <p class="icon-color--cream text-align-right font-size-12">Human Body Temperature (°F)</p>
+                        </div>
+                        <div class="grid--9">
+                            <p class="icon-color--cream text-align-right font-size-12">Room Temperature (°F)</p>
+                        </div>
+                        <div class="grid--10">
+                            <p class="icon-color--cream text-align-right font-size-12">Freezing Point of Water (°F)</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="flex-20">
+                    <div class="thermometer bg-color-white margin-top-bot-2 rounded-elbow text-align-center position-relative">
+                        <div class="thermometer overflow-hidden bg-color-white margin-top-bot-2 rounded-elbow text-align-center position-relative">
+                            <div class="thermometer bg-color-green thermometer-fill" id="js-temperature"></div>
+                            <div class="vertical-grid">
+                                <img src="assets/fire.png" class="grid--1 half-width z-index-9"></img>
+                                <img src="assets/snow.png" class="grid--10 half-width text-align-center z-index-9"></img>
+                            </div>
+                        </div>
+
+                        <div class="temperature-value--right icon-color--cream font-size-17" id="js-temperature-value--right"><h3>TEST</h3></div>
+                        <div class="temperature-value--left icon-color--cream font-size-17" id="js-temperature-value--left"><h3>TEST</h3></div>
+                    </div>
+
+                </div>
+                <div class="flex-40">
+                    <p class="icon-color--cream text-align-left font-size-12">Boiling Point of Water (°C)</p>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="flex-50 padding-10">
+                    <div class="flex">
+                        <div class="flex-80">
+                            <input name="temperature" id="js-temperature-input" type="number" placeholder="Enter Temperature..." class="rounded-elbow--input font-size-17"></input>
+                        </div>
+                        <div class="flex-20">
+                            <div class="custom-select font-size-17">
+                                <select id="js-temperature-type">
+                                  <option value="0" selected="selected">°C</option>
+                                  <option value="1">°F</option>
+                                  <option value="2">°K</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-50 padding-10">
+                    <div class="flex">
+                        <div class="flex-80">
+                            <input id="js-target-temperature" type="number" placeholder="Enter Temperature..." class="rounded-elbow--input font-size-17"></input>
+                        </div>
+                        <div class="flex-20">
+                            <div class="custom-select font-size-17">
+                                <select id="js-target-type">
+                                  <option value="0">°C</option>
+                                  <option value="1" selected="selected">°F</option>
+                                  <option value="2">°K</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex position-relative calculation-bar">
+                <div class="flex-40 padding-10 position-relative">
+                    <button id="js-convert-button" class="calculation-bar--button align-right position-absolute">Convert</button>
+                </div>
+                <div class="flex-20 padding-10 position-relative">
+                    <button id="js-reverse-button" class="calculation-bar--button align-center position-absolute">Reverse</button>
+                </div>
+                <div class="flex-40 padding-10 position-relative">
+                    <button id="js-reset-button" class="calculation-bar--button align-left position-absolute">Reset</button>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="icon-color--cream text-align-center padding-10 fill-width margin-top-bot-2">How to Calculate</h3>
+                <p id="js-temperature-how-to" class="icon-color--cream text-align-center padding-10 fill-width"></p>
+            </div>
+        </div>
+
+        <div class="container rounded-elbow" id="temperature-formula">
+            <h2 class="icon-color--cream text-align-center padding-10">Temperature Formula</h2>
+            <h3 class="icon-color--cream text-align-center padding-10 fill-width margin-top-bot-2">Conversion of Temperature Between Celsius and Kelvin</h3>
+            <ul>
+                <li class="icon-color--cream font-size-12"><strong>The temperature conversion formula from Celsius to Kelvin is:</strong></li>
+            </ul>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="icon-color--purple td-center padding-10">K = C + 273.15</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li class="icon-color--cream font-size-12"><strong><strong>The temperature conversion formula from Kelvin to Celcius is:</strong></strong></li>
+            </ul>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="icon-color--purple td-center padding-10">C = K − 273.15</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="icon-color--cream text-align-center padding-10 fill-width margin-top-bot-2">Conversion of Temperature Between Fahrenheit and Celsius</h3>
+            <p class="icon-color--cream font-size-12">Fahrenheit to Celsius and Celsius to Fahrenheit formulas are listed below. These formulas will help to convert the temperature into required units.Fahrenheit to Celsius and Celsius to Fahrenheit formulas are listed below. These formulas will help to convert the temperature into required units.</p>
+            <ul>
+                <li class="icon-color--cream font-size-12"><strong>The temperature conversion formula from Fahrenheit to Celsius is:</strong></li>
+            </ul>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="icon-color--purple td-center padding-10">C = (F − 32) × 5⁄9</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li class="icon-color--cream font-size-12"><strong>The Temperature Conversion Formula from Celsius to Fahrenheit is:</strong></li>
+            </ul>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="icon-color--purple td-center padding-10">F = C(9⁄5) + 32</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="icon-color--cream text-align-center padding-10 fill-width margin-top-bot-2">Conversion of Temperature Between Fahrenheit and Kelvin</h3>
+            <ul>
+                <li class="icon-color--cream font-size-12"><strong >The Temperature Conversion Formula from Fahrenheit to Kelvin is:</strong></li>
+            </ul>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="icon-color--purple td-center padding-10">K = (F − 32) × 5⁄9 + 273.15</td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li class="icon-color--cream font-size-12"><strong>The Temperature Conversion Formula from Kelvin to Fahrenheit is:</strong></li>
+            </ul>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="icon-color--purple td-center padding-10">F = (K – 273.15) × 9⁄5 + 32</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+    <!-- Script -->
+    <script src="js/script.js">
+    </script>
 </body>
 </html>
